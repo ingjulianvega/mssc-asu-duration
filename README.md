@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/ingjulianvega/mssc-asu-duration.svg?style=svg)](https://circleci.com/gh/ingjulianvega/mssc-asu-duration)
 
-# ASU evidence type management microservice
+# ASU duration management microservice
 
 ### BOM
 

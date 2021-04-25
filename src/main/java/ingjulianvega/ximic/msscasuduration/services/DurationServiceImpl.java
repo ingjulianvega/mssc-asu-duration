@@ -29,7 +29,7 @@ public class DurationServiceImpl implements DurationService {
         log.debug("get()...");
         return DurationList
                 .builder()
-                .bodyPartList(durationMapper.administrationMethodEntityListToAdministrationMethodDtoList(durationRepository.findAll()))
+                .bodyPartList(durationMapper.administrationMethodEntityListToAdministrationMethodDtoList(durationRepository.findAllByOrderByName()))
                 .build();
     }
 
