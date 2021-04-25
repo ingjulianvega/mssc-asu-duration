@@ -6,12 +6,12 @@
     <parent>
         <groupId>ingjulianvega.ximic</groupId>
         <artifactId>mssc-asu-bom</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>ingjulianvega.ximic</groupId>
     <artifactId>mssc-asu-duration</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>mssc-asu-duration</name>
     <description>ASU duration management microservice (duración)</description>
     <properties>
