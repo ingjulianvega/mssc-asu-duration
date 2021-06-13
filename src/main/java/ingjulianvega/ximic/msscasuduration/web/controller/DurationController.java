@@ -21,8 +21,8 @@ public class DurationController implements DurationI {
     private final DurationService durationService;
 
     @Override
-    public ResponseEntity<DurationList> get() {
-        return new ResponseEntity<>(durationService.get(), HttpStatus.OK);
+    public ResponseEntity<DurationList> get(Boolean usingCache) {
+        return new ResponseEntity<>(durationService.get(usingCache), HttpStatus.OK);
     }
 
     @Override

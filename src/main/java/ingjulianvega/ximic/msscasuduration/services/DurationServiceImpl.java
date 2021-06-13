@@ -23,9 +23,9 @@ public class DurationServiceImpl implements DurationService {
     private final DurationRepository durationRepository;
     private final DurationMapper durationMapper;
 
-    @Cacheable(cacheNames = "durationListCache")
+    @Cacheable(cacheNames = "durationListCache", condition = "#usingCache == false")
     @Override
-    public DurationList get() {
+    public DurationList get(Boolean usingCache) {
         log.debug("get()...");
         return DurationList
                 .builder()

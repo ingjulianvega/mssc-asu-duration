@@ -8,7 +8,7 @@ import ingjulianvega.ximic.msscasuduration.web.model.DurationList;
 import java.util.UUID;
 
 public interface DurationService {
-    DurationList get();
+    DurationList get(Boolean usingCache);
 
     DurationDto getById(UUID id);
 

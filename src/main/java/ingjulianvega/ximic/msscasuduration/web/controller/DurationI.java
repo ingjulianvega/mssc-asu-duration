@@ -33,7 +33,7 @@ public interface DurationI {
     @RequestMapping(value = "/",
             produces = {"application/json"},
             method = RequestMethod.GET)
-    ResponseEntity<DurationList> get();
+    ResponseEntity<DurationList> get(@Parameter(in = ParameterIn.QUERY, description = "The using of cache", required = true, schema = @Schema()) Boolean usingCache);
 
     @Operation(summary = "Endpoint to get the information of a duration given the id", description = "Returns a duration", tags = {"duration"})
     @ApiResponses(value = {
