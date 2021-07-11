@@ -31,15 +31,12 @@ server:
   servlet:
     context-path: /asu/v1/duration
 #Logging
-logging:
-  level:
-    root: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
 #Exceptions
 duration:
-  success: The operation was successful.
-  prefix: 'DURATION'
-  error:
-    general: There was an unexpected error. Please try again.
+  api: @artifactId@
 #Eureka
 eureka:
   client:
