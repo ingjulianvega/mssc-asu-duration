@@ -11,6 +11,7 @@ import ingjulianvega.ximic.msscasuduration.web.model.DurationList;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -39,7 +40,14 @@ public class DurationServiceImpl implements DurationService {
         log.debug("getById()...");
         return durationMapper.administrationMethodEntityToAdministrationMethodDto(
                 durationRepository.findById(id)
-                        .orElseThrow(() -> new DurationException(ErrorCodeMessages.DURATION_NOT_FOUND, "")));
+                        .orElseThrow(() -> DurationException
+                                .builder()
+                                .httpStatus(HttpStatus.BAD_REQUEST)
+                                .apiCode(ErrorCodeMessages.DURATION_NOT_FOUND_API_CODE)
+                                .error(ErrorCodeMessages.DURATION_NOT_FOUND_ERROR)
+                                .message(ErrorCodeMessages.DURATION_NOT_FOUND_MESSAGE)
+                                .solution(ErrorCodeMessages.DURATION_NOT_FOUND_SOLUTION)
+                                .build()));
     }
 
     @Override
@@ -58,7 +66,14 @@ public class DurationServiceImpl implements DurationService {
     public void updateById(UUID id, Duration duration) {
         log.debug("updateById...");
         DurationEntity evidenceEntity = durationRepository.findById(id)
-                .orElseThrow(() -> new DurationException(ErrorCodeMessages.DURATION_NOT_FOUND, ""));
+                .orElseThrow(() -> DurationException
+                        .builder()
+                        .httpStatus(HttpStatus.BAD_REQUEST)
+                        .apiCode(ErrorCodeMessages.DURATION_NOT_FOUND_API_CODE)
+                        .error(ErrorCodeMessages.DURATION_NOT_FOUND_ERROR)
+                        .message(ErrorCodeMessages.DURATION_NOT_FOUND_MESSAGE)
+                        .solution(ErrorCodeMessages.DURATION_NOT_FOUND_SOLUTION)
+                        .build());
 
         evidenceEntity.setName(duration.getName());
 
